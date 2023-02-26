@@ -1,9 +1,14 @@
 import "../styles/index.scss";
+import { ChakraProvider } from "@chakra-ui/react";
 // import App from "next/app";
 import type { AppProps /*, AppContext */ } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <ChakraProvider>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for

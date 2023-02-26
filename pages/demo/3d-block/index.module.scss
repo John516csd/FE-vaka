@@ -1,0 +1,47 @@
+.pb {
+  width: 600px;
+  height: 100%;
+  overflow: auto;
+  margin: auto;
+  padding: 120px 100px;
+  perspective: 500px;
+
+  p {
+    margin: auto;
+    padding: 16px;
+    background-color: #aaa;
+    transform-style: preserve-3d;
+    &::before,
+    &::after {
+      transform-style: preserve-3d;
+    }
+  }
+
+  .wow {
+    position: relative;
+    z-index: 1;
+    transform: translate3d(0, 0, 120px);
+    background-color: #f1f1f1;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      height: 120px;
+      background-color: #ccc;
+    }
+
+    &::before {
+      transform-origin: top;
+      top: 0;
+      transform: rotateX(-90deg);
+    }
+
+    &::after {
+      transform-origin: bottom;
+      bottom: 0;
+      transform: rotateX(90deg);
+    }
+  }
+}
