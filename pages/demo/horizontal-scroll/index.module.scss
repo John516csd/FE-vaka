@@ -1,0 +1,60 @@
+.image_container {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform-origin: right top;
+  transform: rotate(-90deg) translateY(-100vw);
+  perspective: 1px;
+  transform-style: preserve-3d;
+  padding: 0px;
+  height: 100vw;
+}
+
+.image_wrapper {
+  transform-origin: 50% 50%;
+  transform: rotate(90deg) translateZ(0.1px) scale(0.9) translateX(0px)
+    translateY(-3vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30vh;
+  transition: all 1s;
+}
+
+.image_wrapper:hover {
+  min-height: 65vh;
+}
+
+.slower {
+  transform: rotate(90deg) translateZ(-0.2px) scale(1.1) translateX(0%)
+    translateY(-10vh);
+}
+.slower1 {
+  transform: rotate(90deg) translateZ(-0.25px) scale(1.05) translateX(0%)
+    translateY(8vh);
+}
+.slower2 {
+  transform: rotate(90deg) translateZ(-0.3px) scale(1.3) translateX(0%)
+    translateY(2vh);
+}
+.slower3 {
+  transform: rotate(90deg) translateZ(-0.2px) scale(1.1) translateX(0%)
+    translateY(16vh);
+}
+.faster {
+  transform: rotate(90deg) translateZ(0.15px) scale(0.8) translateX(0%)
+    translateY(14vh);
+}
+.faster1 {
+  transform: rotate(90deg) translateZ(0.05px) scale(0.8) translateX(0%)
+    translateY(10vh);
+}
+.faster3 {
+  transform: rotate(90deg) translateZ(0.22px) scale(0.7) translateX(-10vh)
+    translateY(-15vh);
+}

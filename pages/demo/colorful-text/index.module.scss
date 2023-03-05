@@ -1,0 +1,26 @@
+.paraph {
+  width: 400px;
+  color: transparent;
+  background: linear-gradient(
+    -4deg,
+    transparent,
+    transparent 25%,
+    #ffb6ff,
+    #b344ff,
+    transparent 75%,
+    transparent
+  );
+  background-clip: text;
+  background-size: 100% 400%;
+  background-position: center 0;
+  animation: textScroll 5s infinite linear alternate;
+}
+
+@keyframes textScroll {
+  100% {
+    background-position: center 100%;
+    background-position: center 100%;
+    background-position: center 100%;
+    background-position: center 100%;
+  }
+}
