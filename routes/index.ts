@@ -1,7 +1,7 @@
 export const routes = [
   {
     url: "/demo",
-    label: "demos",
+    label: "Demos",
     children: [
       {
         url: "/3d-block",
@@ -18,6 +18,10 @@ export const routes = [
       {
         url: "/horizontal-scroll",
         label: "horizontal scroll",
+      },
+      {
+        url: "/comment-card",
+        label: "comment card",
       },
       {
         url: "/test",
