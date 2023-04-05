@@ -7,29 +7,8 @@ import { routes } from "../routes";
 const IndexPage = () => {
   return (
     <Layout title="Home | Next.js + TypeScript Example">
-      <Center w="full">
-        {routes.map((item, index) => {
-          const title = item.label;
-          const baseUrl = item.url;
-          const children = item.children;
-          return (
-            <Center key={index} flexDir="column">
-              <Text as="h2">{title}</Text>
-              <Grid gridTemplateColumns="1fr 1fr 1fr" gap="24px">
-                {children.map((cardItem, index) => {
-                  return (
-                    <GridItem key={index}>
-                      <CommonCard
-                        label={cardItem.label}
-                        url={baseUrl + cardItem.url}
-                      />
-                    </GridItem>
-                  );
-                })}
-              </Grid>
-            </Center>
-          );
-        })}
+      <Center w="full" minH="100vh">
+        <Text as="h1">I'm Vaka 👋</Text>
       </Center>
     </Layout>
   );
