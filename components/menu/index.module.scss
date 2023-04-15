@@ -1,0 +1,12 @@
+@keyframes square-in-bottom-right {
+  from {
+    clip-path: inset(25px 100% 100% 25px);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:square:bottom-right"] {
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) square-in-bottom-right both;
+}
