@@ -13,7 +13,7 @@ const Header = () => {
         {/* Link Group */}
         <Flex flex={1}>
           <Center p="12px">
-            <Link href="/demo">📚 Demos</Link>
+            <Link href="/demo">💡 Demos</Link>
           </Center>
         </Flex>
       </Center>
