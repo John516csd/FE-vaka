@@ -42,23 +42,6 @@ const Menu = () => {
     const TRANSITION_CODE = 'all 0.3s ease-in-out';
 
     return <Box>
-        <Button
-            pos="absolute"
-            left="40px"
-            top="40px"
-            _hover={{
-                bg: isActive ? "#fff" : "blackAlpha.900"
-            }}
-            transition={`${TRANSITION_CODE} ${genDelay(1, 0.3)}`}
-            bg={isActive ? "#fff" : "blackAlpha.900"}
-            color={isActive ? "#000000" : "#ffffff"}
-            padding="8px 24px"
-            borderRadius="200px"
-            zIndex="99"
-            onClick={handleSwitchActive}
-        >
-            Menu
-        </Button>
         <Box
             ref={menuRef}
             pos="absolute"
@@ -69,8 +52,27 @@ const Menu = () => {
             h="500px"
             transition={`${TRANSITION_CODE} ${genDelay(0, 0.3)}`}
             bg="#000"
-            clipPath={isActive ? "inset(0 0 0 0 round 10px)" : "inset(20px 100% 100% 20px round 10px)"}
+            clipPath={isActive ? "inset(0 0 0 0 round 20px)" : "inset(20px 240px 440px 20px round 20px)"}
         >
+            <Button
+                w="90px"
+                h="40px"
+                pos="absolute"
+                left="20px"
+                top="20px"
+                _hover={{
+                    bg: isActive ? "#fff" : "blackAlpha.900"
+                }}
+                transition={`${TRANSITION_CODE} ${genDelay(1, 0.3)}`}
+                bg={isActive ? "#fff" : "blackAlpha.900"}
+                color={isActive ? "#000000" : "#ffffff"}
+                padding="8px 24px"
+                borderRadius="200px"
+                zIndex="99"
+                onClick={handleSwitchActive}
+            >
+                Menu
+            </Button>
             <Text as="ul" p="100px 48px 100px" transition={`${TRANSITION_CODE} ${genDelay(2, 0.5)}`} opacity={isActive ? 1 : 0}>
                 {
                     MENU_LIST.map((item, index) => {
