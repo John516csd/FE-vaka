@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  //   max-height: 0;
+  height: 0px;
+  overflow: hidden;
+}
