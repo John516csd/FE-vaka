@@ -27,6 +27,10 @@ export const routes = [
         url: "/test",
         label: "test",
       },
+      {
+        url: "/collapse",
+        label: "Collapse",
+      },
     ],
   },
 ];

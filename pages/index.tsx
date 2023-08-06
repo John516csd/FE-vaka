@@ -4,14 +4,14 @@ import { getTodoList } from "../api/test";
 import Layout from "../components/Layout";
 
 const IndexPage = () => {
-  const getData = async () => {
-    let rs = await getTodoList();
-    console.log("🚀 ~ file: index.tsx:12 ~ getData ~ rs:", rs)
-  }
+  // const getData = async () => {
+  //   let rs = await getTodoList();
+  //   console.log("🚀 ~ file: index.tsx:12 ~ getData ~ rs:", rs)
+  // }
 
-  useEffect(() => {
-    getData();
-  }, [])
+  // useEffect(() => {
+  //   getData();
+  // }, [])
 
   return (
     <Layout title="Home | Next.js + TypeScript Example">
