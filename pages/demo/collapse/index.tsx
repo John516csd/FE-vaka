@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import styles from "./index.module.scss";
 import { Box, Center, Text } from "@chakra-ui/react";
 import Display from "../../../components/display";
+import Layout from "../../../components/Layout";
 
 const Collapse = () => {
   const collapseRef = useRef<HTMLDivElement>(null);
@@ -30,31 +31,33 @@ const Collapse = () => {
   //   };
 
   return (
-    <Display>
-      <Box
-        className={styles.collapse}
-        ref={collapseRef}
-        borderRadius="12px"
-        bg="whiteAlpha.600"
-        maxW="600px"
-      >
+    <Layout>
+      <Display>
         <Box
-          className={styles.title}
-          padding="16px 12px"
-          cursor="pointer"
-          onClick={handleClick}
+          className={styles.collapse}
+          ref={collapseRef}
+          borderRadius="12px"
+          bg="whiteAlpha.600"
+          maxW="600px"
         >
-          成都
-        </Box>
-        {/* 🙅 这个包着内容的容器不要设置padding，设置padding会导致maxHeight为0的时候依然会有padding撑着，会看到内容 */}
-        <Box className={styles.content} transition="all 0.3s ease-in-out">
-          <Box padding="0 12px 16px">
-            和我在成都的街头走一走，直到所有的灯都熄灭了都不停留,
-            我会挽着你的衣袖，你会把手揣进裤兜。
+          <Box
+            className={styles.title}
+            padding="16px 12px"
+            cursor="pointer"
+            onClick={handleClick}
+          >
+            成都
+          </Box>
+          {/* 🙅 这个包着内容的容器不要设置padding，设置padding会导致maxHeight为0的时候依然会有padding撑着，会看到内容 */}
+          <Box className={styles.content} transition="all 0.3s ease-in-out">
+            <Box padding="0 12px 16px">
+              和我在成都的街头走一走，直到所有的灯都熄灭了都不停留,
+              我会挽着你的衣袖，你会把手揣进裤兜。
+            </Box>
           </Box>
         </Box>
-      </Box>
-    </Display>
+      </Display>
+    </Layout>
   );
 };
 export default Collapse;
