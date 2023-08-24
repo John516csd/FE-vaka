@@ -1,0 +1,11 @@
+.row_logos_container {
+  display: inline-flex;
+  width: max-content;
+  animation: row-logos-move 6s linear infinite;
+}
+
+@keyframes row-logos-move {
+  100% {
+    transform: translateX(-50%);
+  }
+}
