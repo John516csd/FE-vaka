@@ -31,6 +31,10 @@ export const routes = [
         url: "/collapse",
         label: "Collapse",
       },
+      {
+        url: "/infinite-scroll",
+        label: "Infinite Scroll",
+      },
     ],
   },
 ];
