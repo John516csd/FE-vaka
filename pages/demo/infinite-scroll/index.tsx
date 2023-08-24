@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import Display from "../../../components/display";
 import { Box, Center, Flex, Image } from "@chakra-ui/react";
-import { LOGOS } from "./constants";
+import { LOGOS } from "../../../constants/infinite-scroll";
 import { calcWindowSizeSign, getValueBySignSchema } from "../../../constants";
 
 const LOGO_SIZE = {
