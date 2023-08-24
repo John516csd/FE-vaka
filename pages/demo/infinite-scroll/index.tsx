@@ -13,32 +13,34 @@ const LOGO_SIZE = {
 
 const InfiniteScroll = () => {
   const [logoSize, setLogoSize] = useState(LOGO_SIZE.base);
-  const [renderLogos, setRenderLogos]= useState(LOGOS);
+  const [renderLogos, setRenderLogos] = useState(LOGOS);
   const MAX_W = 1600;
 
   const handleResize = () => {
-    let windowWidth = window.innerWidth;
-    if(windowWidth > MAX_W) {
-      windowWidth = MAX_W;
-    }
-    const sign = calcWindowSizeSign(windowWidth);
-    const logoSizeValue = getValueBySignSchema(sign, LOGO_SIZE);
-    setLogoSize(logoSizeValue);
-
-    const logoLen = LOGOS.length;
-    const allLogoWidth = logoLen * logoSizeValue;
-    const canContainLogoCount = Math.round(windowWidth / logoSizeValue);
-    let renderLogos = [];
-
-    if(allLogoWidth > windowWidth) {
-      renderLogos = LOGOS;
-    } else {
-      for(let i = 0;i < canContainLogoCount;++i) {
-        renderLogos.push(LOGOS[i % logoLen]);
+    requestAnimationFrame(() => {
+      let windowWidth = window.innerWidth;
+      if (windowWidth > MAX_W) {
+        windowWidth = MAX_W;
       }
-    }
+      const sign = calcWindowSizeSign(windowWidth);
+      const logoSizeValue = getValueBySignSchema(sign, LOGO_SIZE);
+      setLogoSize(logoSizeValue);
 
-    setRenderLogos([...renderLogos, ...renderLogos]);
+      const logoLen = LOGOS.length;
+      const allLogoWidth = logoLen * logoSizeValue;
+      const canContainLogoCount = Math.round(windowWidth / logoSizeValue);
+      let renderLogos = [];
+
+      if (allLogoWidth > windowWidth) {
+        renderLogos = LOGOS;
+      } else {
+        for (let i = 0; i < 2 * canContainLogoCount; ++i) {
+          renderLogos.push(LOGOS[i % logoLen]);
+        }
+      }
+
+      setRenderLogos(renderLogos);
+    });
   };
 
   useEffect(() => {
@@ -53,23 +55,23 @@ const InfiniteScroll = () => {
   return (
     <Display>
       <Box maxW="1600px" w="full">
-      <Box w="full" overflow="hidden">
-        <Box className={styles.row_logos_container}>
-          {[...renderLogos].map((item, index) => {
-            return (
-              <Image
-                display="inline"
-                objectFit="contain"
-                w={`${logoSize}px`}
-                h={`${logoSize}px`}
-                src={item.src}
-                alt={item.alt}
-                key={index}
-              />
-            );
-          })}
+        <Box w="full" overflow="hidden">
+          <Box className={styles.row_logos_container}>
+            {[...renderLogos].map((item, index) => {
+              return (
+                <Image
+                  display="inline"
+                  objectFit="contain"
+                  w={`${logoSize}px`}
+                  h={`${logoSize}px`}
+                  src={item.src}
+                  alt={item.alt}
+                  key={index}
+                />
+              );
+            })}
+          </Box>
         </Box>
-      </Box>
       </Box>
     </Display>
   );
