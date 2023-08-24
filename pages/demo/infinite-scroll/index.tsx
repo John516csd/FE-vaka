@@ -32,7 +32,7 @@ const InfiniteScroll = () => {
       let renderLogos = [];
 
       if (allLogoWidth > windowWidth) {
-        renderLogos = LOGOS;
+        renderLogos = [...LOGOS, ...LOGOS];
       } else {
         for (let i = 0; i < 2 * canContainLogoCount; ++i) {
           renderLogos.push(LOGOS[i % logoLen]);
