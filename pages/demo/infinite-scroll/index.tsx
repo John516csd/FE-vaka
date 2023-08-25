@@ -32,9 +32,9 @@ const InfiniteScroll = () => {
       let renderLogos = [];
 
       if (allLogoWidth > windowWidth) {
-        renderLogos = [...LOGOS, ...LOGOS];
+        renderLogos = LOGOS;
       } else {
-        for (let i = 0; i < 2 * canContainLogoCount; ++i) {
+        for (let i = 0; i < canContainLogoCount; ++i) {
           renderLogos.push(LOGOS[i % logoLen]);
         }
       }
@@ -57,7 +57,7 @@ const InfiniteScroll = () => {
       <Box maxW="1600px" w="full">
         <Box w="full" overflow="hidden">
           <Box className={styles.row_logos_container}>
-            {[...renderLogos].map((item, index) => {
+            {[...renderLogos, ...renderLogos].map((item, index) => {
               return (
                 <Image
                   display="inline"
