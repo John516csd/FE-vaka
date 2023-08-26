@@ -4,6 +4,7 @@ import Display from "../../../components/display";
 import { Box, Center, Flex, Image } from "@chakra-ui/react";
 import { LOGOS } from "../../../constants/infinite-scroll";
 import { calcWindowSizeSign, getValueBySignSchema } from "../../../constants";
+import { largestDistanceNoRepeatArr } from "../../../utils";
 
 const LOGO_SIZE = {
   base: 100,
@@ -14,7 +15,7 @@ const LOGO_SIZE = {
 const InfiniteScroll = () => {
   const [logoSize, setLogoSize] = useState(LOGO_SIZE.base);
   const [renderLogos, setRenderLogos] = useState(LOGOS);
-  const MAX_W = 1600;
+  const MAX_W = 1900;
 
   const handleResize = () => {
     requestAnimationFrame(() => {
@@ -26,18 +27,8 @@ const InfiniteScroll = () => {
       const logoSizeValue = getValueBySignSchema(sign, LOGO_SIZE);
       setLogoSize(logoSizeValue);
 
-      const logoLen = LOGOS.length;
-      const allLogoWidth = logoLen * logoSizeValue;
       const canContainLogoCount = Math.round(windowWidth / logoSizeValue);
-      let renderLogos = [];
-
-      if (allLogoWidth > windowWidth) {
-        renderLogos = LOGOS;
-      } else {
-        for (let i = 0; i < canContainLogoCount; ++i) {
-          renderLogos.push(LOGOS[i % logoLen]);
-        }
-      }
+      let renderLogos = largestDistanceNoRepeatArr(LOGOS, canContainLogoCount);
 
       setRenderLogos(renderLogos);
     });
