@@ -11,7 +11,7 @@ type Props = {
 };
 
 const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <Box bg="#e9e9e9" pos="relative">
+  <Box bg="cornsilk" pos="relative">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />

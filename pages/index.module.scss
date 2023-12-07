@@ -1,0 +1,54 @@
+.container {
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+.welcome_text {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(25deg);
+  font-size: 10rem;
+  animation: rotate 2s alternate infinite ease-in-out,
+    fall 0.6s alternate infinite cubic-bezier(0.22, 0.16, 0.04, 0.99) forwards;
+
+  &::after,
+  &::before {
+    content: "W";
+    position: absolute;
+    color: #575757;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &::after {
+    transform: translateZ(-10px);
+  }
+
+  &::before {
+    transform: translateZ(-20px);
+  }
+}
+
+@keyframes fall {
+  0% {
+    scale: 1.25 0.75;
+    translate: 0 150px;
+  }
+  25% {
+    scale: 1 1;
+  }
+  100% {
+    scale: 1 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(-45deg);
+  }
+  100% {
+    transform: rotateY(45deg);
+  }
+}
