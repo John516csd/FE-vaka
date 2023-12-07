@@ -41,8 +41,8 @@ const Menu = () => {
 
     const TRANSITION_CODE = 'all 0.3s ease-in-out';
 
-    return <Box>
-        <Box
+    return <Box
+            zIndex="999"
             ref={menuRef}
             pos="absolute"
             left="20px"
@@ -82,7 +82,6 @@ const Menu = () => {
                     })
                 }
             </Text>
-        </Box>
-    </Box >;
+    </Box>
 };
 export default Menu;
