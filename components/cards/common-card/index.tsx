@@ -15,6 +15,8 @@ const CommonCard = ({ label, url }: IProp) => {
         boxShadow="0px 16px 60px rgba(0, 0, 0, 0.05);"
         borderRadius="12px"
         bg="#fff"
+        p="12px"
+        textAlign="center"
       >
         <Text as="h4">{label}</Text>
       </Center>

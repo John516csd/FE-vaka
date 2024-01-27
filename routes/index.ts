@@ -35,6 +35,10 @@ export const routes = [
         url: "/infinite-scroll",
         label: "Infinite Scroll",
       },
+      {
+        url: "/card-light-shadow",
+        label: "Card light and shadow effects",
+      },
     ],
   },
 ];
