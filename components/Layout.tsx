@@ -8,10 +8,15 @@ import Menu from "./menu";
 type Props = {
   children?: ReactNode;
   title?: string;
+  bg?: string;
 };
 
-const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <Box bg="cornsilk" pos="relative">
+const Layout = ({
+  children,
+  title = "This is the default title",
+  bg = "cornsilk",
+}: Props) => (
+  <Box bg={bg} pos="relative">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
