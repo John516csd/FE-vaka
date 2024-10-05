@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import styles from "./index.module.scss";
 import Layout from "../../../components/Layout";
 import { Box } from "@chakra-ui/react";
-import Flip from "../../../utils/flip";
 
 const DragList = () => {
   const dragListRef = useRef<HTMLDivElement>(null);
