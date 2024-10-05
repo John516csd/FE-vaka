@@ -4,6 +4,10 @@ export const routes = [
     label: "Demos",
     children: [
       {
+        url: "/drag-down",
+        label: "拖拽排序",
+      },
+      {
         url: "/3d-block",
         label: "3d block",
       },
@@ -38,6 +42,10 @@ export const routes = [
       {
         url: "/card-light-shadow",
         label: "Card light and shadow effects",
+      },
+      {
+        url: "/scroll-parallax",
+        label: "Sliding disparity effect",
       },
     ],
   },
