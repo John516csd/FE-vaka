@@ -13,7 +13,7 @@ const IndexPage = () => {
           const baseUrl = item.url;
           const children = item.children;
           return (
-            <Center key={index} flexDir="column" gap="64px">
+            <Center key={index} flexDir="column" gap="64px" pb="64px">
               <Text as="h2">{title}</Text>
               <Grid
                 gridTemplateColumns={{

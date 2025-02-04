@@ -47,6 +47,11 @@ export const routes = [
         url: "/scroll-parallax",
         label: "Sliding disparity effect",
       },
+      {
+        url: "/mac-bottom-bar",
+        label: "Mac bottom bar",
+      },
     ],
   },
 ];
+

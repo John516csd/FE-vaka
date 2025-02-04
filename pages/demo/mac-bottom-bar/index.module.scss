@@ -1,0 +1,37 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.docker_wrapper {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  box-sizing: content-box;
+  height: 50px;
+  align-items: end;
+}
+
+.item {
+  width: calc(var(--i, 1) * 50px);
+  height: calc(var(--i, 1) * 50px);
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  transition: all 0.2s;
+  transform: translateY(calc(calc(var(--i, 1) - 1) * 30px * -1));
+}
+
+.gap {
+  width: calc(var(--i, 1) * 10px);
+  height: 50px;
+  background-color: #00000000;
+  transition: all 0.2s;
+}
